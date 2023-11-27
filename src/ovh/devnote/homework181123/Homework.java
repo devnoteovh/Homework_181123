@@ -238,4 +238,25 @@ public class Homework {
         return false;
     }
 
+    public static String extraEx(String s){
+        return reduce(s,"" );
+    }
+    private static String reduce(String s, String preview) {
+        if( preview.equals(s)){
+            return s;
+        }
+        else{
+            preview = s;
+            if (s.contains("ab") || s.contains("ba")) {
+                s = s.replaceAll("ab|ba", "c");
+            }
+            if (s.contains("ac") || s.contains("ca")) {
+                s = s.replaceAll("ac|ca", "b");
+            }
+            if (s.contains("bc") || s.contains("cb")) {
+                s = s.replaceAll("bc|cb", "a");
+            }
+        }
+        return reduce(s,preview);
+    }
 }
