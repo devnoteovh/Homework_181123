@@ -21,6 +21,7 @@ public class Main {
         System.out.println(Homework.makeChocolate(2,2,2));
         System.out.println(Homework.countClumps(new int[]{1, 2, 2, 3, 4, 4}));
         System.out.println(Homework.canBalance(new int[]{1, 2,3,6}));
+        System.out.println(ExtraEx.extraEx("ababcbcbacab"));
 
 
 
