@@ -52,6 +52,38 @@ public class LinkedList<E> {
         }
         return null;
     }
+    public E get(int index){
+        if (index<0 || index>this.size){
+            return null;
+        }
+        int i=0;
+        Node<E> node = head;
+        while(i<index){
+            node = node.getNext();
+            i++;
+        }
+        return node.getValue();
+    }
+
+    public void set(int index,E e){
+        int i=0;
+        Node<E> node = head;
+        while(i<index){
+            node = node.getNext();
+            i++;
+        }
+        node.setValue(e);
+    }
+
+    public int indexOf(E e){
+        int i=0;
+        Node<E> node = head;
+        while(!node.getValue().equals(e)){
+            node = node.getNext();
+            i++;
+        }
+        return i;
+    }
 
     public String toString(){
         Node curr = head;
@@ -70,12 +102,12 @@ public class LinkedList<E> {
         return sb.toString();
     }
 
-    public Node getHead() {
-        return head;
+    public E getHead() {
+        return (E)head.getValue();
     }
 
-    public Node getTail() {
-        return tail;
+    public E getTail() {
+        return (E)tail.getValue();
     }
 
     public int getSize() {
