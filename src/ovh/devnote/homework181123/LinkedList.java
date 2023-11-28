@@ -43,13 +43,25 @@ public class LinkedList<E> {
             if (curr.getNext()!=null){
                 E returned = (E)curr.getNext().getValue();
                 Node newnode = curr.getNext().getNext();
-                newnode.setPrevious(newnode);
-                tail=newnode;
-                curr.setNext(newnode);
+                if( newnode!=null) {
+                    newnode.setPrevious(newnode);
+                    tail = newnode;
+                    curr.setNext(newnode);
+                }else{
+                    tail=head;
+                    head.setNext(null);
+                }
                 size--;
                 return (E)returned;
             }
         }
+        return null;
+    }
+
+    public E removeLast() {
+        tail=tail.previous;
+        tail.setNext(null);
+        size--;
         return null;
     }
     public E get(int index){

@@ -16,6 +16,8 @@ public class TestForLinkedList {
         lista.add("pierwszy");
         lista.add("drugi");
         lista.add("trzeci");
+        lista.removeLast();
+        System.out.println(lista);
 
         System.out.println("head = "+lista.getHead());
         System.out.println("tail = "+lista.getTail());
