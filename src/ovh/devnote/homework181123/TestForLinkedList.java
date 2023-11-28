@@ -15,20 +15,19 @@ public class TestForLinkedList {
         LinkedList<String> lista = new LinkedList<>();
         lista.add("pierwszy");
         lista.add("drugi");
-        lista.add("trzeci");
-        lista.removeLast();
+
+        //lista.removeLast();
+        //lista.removeLast();
+        //lista.removeLast();
+        lista.remove("pierwszy");
+
         System.out.println(lista);
 
         System.out.println("head = "+lista.getHead());
         System.out.println("tail = "+lista.getTail());
         System.out.println("size = "+lista.getSize());
 
-        System.out.println(lista.remove("drugi"));
-        System.out.println(lista);
 
-        System.out.println("head = "+lista.getHead());
-        System.out.println("tail = "+lista.getTail());
-        System.out.println("size = "+lista.getSize());
 
         Queue<String> queue= new Queue<>();
         queue.offer("pierwszy");

@@ -32,7 +32,10 @@ public class LinkedList<E> {
         if ( head.getValue().equals(e)){
             E returned = (E)head.getValue();
             head = head.getNext();
-            tail=head;
+            if(head==null || head.getNext()==null)
+                tail=head; //null
+            else
+                tail=head.getNext();
             size--;
             return returned;
         }else{
@@ -43,14 +46,15 @@ public class LinkedList<E> {
             if (curr.getNext()!=null){
                 E returned = (E)curr.getNext().getValue();
                 Node newnode = curr.getNext().getNext();
-                if( newnode!=null) {
+                if (newnode!= null) {
                     newnode.setPrevious(newnode);
                     tail = newnode;
                     curr.setNext(newnode);
                 }else{
-                    tail=head;
-                    head.setNext(null);
+                    curr.setNext(null);
+                    tail=curr;
                 }
+
                 size--;
                 return (E)returned;
             }
@@ -59,9 +63,17 @@ public class LinkedList<E> {
     }
 
     public E removeLast() {
-        tail=tail.previous;
-        tail.setNext(null);
-        size--;
+        if(tail!=null){
+            E e = (E)tail.getValue();
+            tail=tail.previous;
+            if (tail!=null)
+                tail.setNext(null);
+            else{
+                head=tail;
+            }
+            size--;
+            return e;
+        }
         return null;
     }
     public E get(int index){
@@ -115,10 +127,15 @@ public class LinkedList<E> {
     }
 
     public E getHead() {
+        if(head==null){
+            return null;
+        }
         return (E)head.getValue();
     }
 
     public E getTail() {
+        if (tail==null)
+            return null;
         return (E)tail.getValue();
     }
 
