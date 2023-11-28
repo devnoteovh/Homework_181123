@@ -19,6 +19,14 @@ public class TestForLinkedList {
         System.out.println("tail = "+lista.getTail());
         System.out.println("size = "+lista.getSize());
 
+        Queue<String> queue= new Queue<>();
+        queue.offer("pierwszy");
+        queue.offer("drugi");
+        queue.offer("trzeci");
+
+        System.out.println(queue);
+        queue.poll();
+        System.out.println(queue);
 
     }
 }

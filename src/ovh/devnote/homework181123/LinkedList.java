@@ -6,6 +6,10 @@ public class LinkedList<E> {
     private int size;
     public LinkedList(){}
 
+    public E peek(){
+        return (E)head.getValue();
+    }
+
     public void add(E v){
         if(head == null){
             head = new Node(v);

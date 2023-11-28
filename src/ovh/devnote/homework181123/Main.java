@@ -23,9 +23,5 @@ public class Main {
         System.out.println(Homework.canBalance(new int[]{1, 2,3,6}));
         System.out.println(Homework.extraEx("ababcbcbacab"));
 
-
-
-
-
     }
 }
