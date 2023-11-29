@@ -9,7 +9,10 @@ public class TestForLinkedList {
         minHeap.push("5");
         minHeap.push("0");
         minHeap.push("1");
-
+        System.out.println(minHeap);
+        System.out.println(minHeap.pop());
+        System.out.println(minHeap.pop());
+        System.out.println(minHeap.pop());
         System.out.println(minHeap);
 
         LinkedList<String> lista = new LinkedList<>();
