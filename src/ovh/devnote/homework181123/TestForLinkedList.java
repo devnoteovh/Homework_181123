@@ -1,14 +1,20 @@
 package ovh.devnote.homework181123;
 
+import java.util.Arrays;
+
 public class TestForLinkedList {
     public static void main(String[] args) {
 
         MinHeap<String> minHeap = new MinHeap<>();
-        minHeap.push("3");
-        minHeap.push("4");
-        minHeap.push("5");
-        minHeap.push("0");
-        minHeap.push("1");
+        String[] tab = {"3","4","0","2"};
+        for(int i=0;i<tab.length;i++){
+            minHeap.push(tab[i]);
+        }
+        for(int i=0;i<tab.length;i++){
+            tab[i]=minHeap.pop();
+        }
+        System.out.println(Arrays.toString(tab));
+
         System.out.println(minHeap);
         System.out.println(minHeap.pop());
         System.out.println(minHeap.pop());
@@ -43,6 +49,10 @@ public class TestForLinkedList {
         queue.offer("drugi");
         queue.offer("trzeci");
 
+        System.out.println(queue);
+        queue.poll();
+        System.out.println(queue);
+        queue.poll();
         System.out.println(queue);
         queue.poll();
         System.out.println(queue);

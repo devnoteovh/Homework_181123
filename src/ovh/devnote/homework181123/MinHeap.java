@@ -67,6 +67,10 @@ public class MinHeap<E extends Comparable<E>> {
         linkedList.set(idx2,temp);
     }
 
+    public int size(){
+        return linkedList.size();
+    }
+
     @Override
     public String toString() {
         return linkedList.toString().replaceAll("LinkedList","MinHeap");

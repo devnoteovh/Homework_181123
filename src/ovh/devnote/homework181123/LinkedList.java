@@ -94,11 +94,12 @@ public class LinkedList<E> {
     public void set(int index,E e){
         int i=0;
         Node<E> node = head;
-        while(i<index){
+        while(i<size && i<index){
             node = node.getNext();
             i++;
         }
-        node.setValue(e);
+        if(node!=null)
+            node.setValue(e);
     }
 
     public int indexOf(E e){
@@ -144,6 +145,10 @@ public class LinkedList<E> {
     }
 
     public int getSize() {
+        return size;
+    }
+
+    public int size(){
         return size;
     }
 
