@@ -29,11 +29,13 @@ public class LinkedList<E> {
         }
     }
     public E remove(E e){
+        if(size==0)
+            return null;
         if ( head.getValue().equals(e)){
             E returned = (E)head.getValue();
             head = head.getNext();
             if(head==null || head.getNext()==null)
-                tail=head; //null
+                tail=head; // head equals tail and/or null
             else
                 tail=head.getNext();
             size--;
@@ -63,19 +65,19 @@ public class LinkedList<E> {
     }
 
     public E removeLast() {
-        if(tail!=null){
-            E e = (E)tail.getValue();
-            tail=tail.previous;
-            if (tail!=null)
-                tail.setNext(null);
-            else{
-                head=tail;
-            }
-            size--;
-            return e;
+        if(size==0)
+            return null;
+        E e = (E)tail.getValue();
+        tail=tail.previous;
+        if (tail!=null)
+            tail.setNext(null);
+        else{
+            head=tail;
         }
-        return null;
+        size--;
+        return e;
     }
+
     public E get(int index){
         if (index<0 || index>this.size){
             return null;

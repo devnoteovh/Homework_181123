@@ -15,11 +15,15 @@ public class TestForLinkedList {
         LinkedList<String> lista = new LinkedList<>();
         lista.add("pierwszy");
         lista.add("drugi");
+        lista.add("trzeci");
 
-        //lista.removeLast();
-        //lista.removeLast();
-        //lista.removeLast();
-        lista.remove("pierwszy");
+        lista.removeLast();
+        lista.removeLast();
+        lista.removeLast();
+        lista.removeLast();
+
+        //lista.remove("trzeci");
+
 
         System.out.println(lista);
 
