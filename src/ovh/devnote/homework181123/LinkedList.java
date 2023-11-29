@@ -104,10 +104,12 @@ public class LinkedList<E> {
     public int indexOf(E e){
         int i=0;
         Node<E> node = head;
-        while(!node.getValue().equals(e)){
+        while(i<size && !node.getValue().equals(e)){
             node = node.getNext();
             i++;
         }
+        if (i>=size)
+            return -1;
         return i;
     }
 

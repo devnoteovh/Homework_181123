@@ -17,10 +17,12 @@ public class TestForLinkedList {
         lista.add("drugi");
         lista.add("trzeci");
 
-        lista.removeLast();
-        lista.removeLast();
-        lista.removeLast();
-        lista.removeLast();
+        System.out.println(lista.indexOf("trzeci"));
+        System.out.println(lista.indexOf("czwarty"));
+        //lista.removeLast();
+        //lista.removeLast();
+        //lista.removeLast();
+        //lista.removeLast();
 
         //lista.remove("trzeci");
 
