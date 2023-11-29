@@ -31,6 +31,12 @@ public class MinHeap<E extends Comparable<E>> {
         E tailV =linkedList.getTail();
         linkedList.set(0,tailV);
         linkedList.removeLast();
+
+        heapifyDown();
+        return headV;
+    }
+
+    private void heapifyDown() {
         int index =0;
         int lessIndex=0;
         while(true){
@@ -39,7 +45,7 @@ public class MinHeap<E extends Comparable<E>> {
             //searching index of smallest child:
             if ( leftChildIndex < linkedList.getSize() &&
                     linkedList.get(leftChildIndex).compareTo(linkedList.get(lessIndex))<0){
-                    lessIndex =  leftChildIndex;
+                lessIndex =  leftChildIndex;
             }
             if ( rightChildIndex < linkedList.getSize() &&
                     linkedList.get(rightChildIndex).compareTo(linkedList.get(lessIndex))<0){
@@ -53,8 +59,8 @@ public class MinHeap<E extends Comparable<E>> {
             }
 
         }
-        return headV;
     }
+
     public void swap(int idx1, int idx2){
         E temp = linkedList.get(idx1);
         linkedList.set(idx1, linkedList.get(idx2));
