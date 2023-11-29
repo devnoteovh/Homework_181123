@@ -4,6 +4,13 @@ import java.util.Arrays;
 
 public class TestForLinkedList {
     public static void main(String[] args) {
+        QuiteStrangeQueue  qsq= new QuiteStrangeQueue();
+        qsq.push(new StrangeObject("Ala",50));
+        qsq.push(new StrangeObject("Bob",99));
+        qsq.push(new StrangeObject("Celina",99));
+        System.out.println(qsq.popHighThree());
+        System.out.println(qsq);
+
 
         MinHeap<String> minHeap = new MinHeap<>();
         String[] tab = {"3","4","0","2"};
