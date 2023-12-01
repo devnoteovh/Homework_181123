@@ -111,6 +111,7 @@ public class Homework {
                 s=s.replaceFirst("xyz","000");
             }
         }
+        //old solution
         // return Math.abs(sses[0].length()-sses[1].length())<=1 ;
     }
 
