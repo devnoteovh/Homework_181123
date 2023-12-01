@@ -98,11 +98,20 @@ public class Homework {
         return repeated;
     }
 
-    public static boolean xyzMiddle(String str) {
-
-        //TODO: xyz can repeat!! Need to rewrite solution.
-            String[] sses = str.split("xyz");
-            return Math.abs(sses[0].length()-sses[1].length())<=1 ;
+    public static boolean xyzMiddle(String s) {
+        while(true) {
+            int xyz = s.indexOf("xyz");
+            if (xyz==-1)
+                return false;
+            String s1 = s.substring(0, xyz);
+            String s2 = s.substring(xyz + 3);
+            if ( Math.abs(s1.length()-s2.length())<=1) {
+                    return true;
+            }else{
+                s=s.replaceFirst("xyz","000");
+            }
+        }
+        // return Math.abs(sses[0].length()-sses[1].length())<=1 ;
     }
 
     public static String mixString(String a, String b) {
