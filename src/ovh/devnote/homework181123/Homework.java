@@ -98,7 +98,7 @@ public class Homework {
         return repeated;
     }
 
-    public static boolean xyzMiddle(String s) {
+    public static boolean xyzMiddleOld(String s) {
         while(true) {
             int xyz = s.indexOf("xyz");
             if (xyz==-1)
@@ -113,6 +113,19 @@ public class Homework {
         }
         //old solution
         // return Math.abs(sses[0].length()-sses[1].length())<=1 ;
+    }
+    public static boolean xyzMiddle(String s) {
+        int xyz = s.indexOf("xyz");
+        if (xyz==-1)
+            return false;
+        String s1 = s.substring(0, xyz);
+        String s2 = s.substring(xyz + 3);
+        if ( Math.abs(s1.length()-s2.length())<=1) {
+            return true;
+        }else{
+            s=s.replaceFirst("xyz","000");
+            return xyzMiddle(s);
+        }
     }
 
     public static String mixString(String a, String b) {
